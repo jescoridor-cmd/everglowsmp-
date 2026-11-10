@@ -1,2 +1,0 @@
-# everglowsmp-
-Website EverGlow 
