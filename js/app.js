@@ -13,7 +13,130 @@
  function pageContent(){if(page==='home')return home();let [title,desc]=titles[page]||['EverGlow SMP',''];let body='';
  switch(page){case'features':body=cards(featureCards);break;
  case'guide':body=`<div class="content-grid"><article class="card"><h3>1. Join server</h3><p>Java: <b>evglow.my.id</b>. Bedrock: <b>eglow.mcindo.my.id:23379</b>, port <b>23379</b>.</p></article><article class="card"><h3>2. Teleport</h3><p><code>/rtp</code> hanya di Lobby untuk membuka GUI pemilihan dunia. <code>/egrtp</code> random teleport langsung di world, world_nether, dan world_the_end.</p></article><article class="card"><h3>3. Warp</h3><p><code>/warps</code> membuka GUI navigasi warp.</p></article><article class="card"><h3>4. Rewards</h3><p><code>/pta</code>, <code>/dailyreward</code>, dan <code>/votereward</code> sesuai ketentuan server.</p></article></div>`;break;
- case'claims':body=`<div class="notice">Plugin claim yang digunakan belum dikonfirmasi. Perintah dan mekanisme di bawah adalah panduan umum; sesuaikan dengan plugin serta konfigurasi aktual server.</div><div class="content-grid" style="margin-top:18px"><article class="card"><h3>Membuat claim</h3><p>Jika plugin mendukung golden shovel, gunakan shovel sesuai instruksi plugin untuk memilih dua sudut area. Periksa pesan konfirmasi dan batas claim.</p></article><article class="card"><h3>Trust pemain</h3><p>Gunakan perintah trust resmi dari plugin claim untuk memberi akses. Pastikan nama pemain benar sebelum memberikan izin.</p></article><article class="card"><h3>Untrust & akses</h3><p>Cabut akses pemain melalui perintah untrust plugin. Periksa daftar trusted players secara berkala.</p></article><article class="card"><h3>Kelola wilayah</h3><p>Jangan claim area publik atau wilayah pemain lain. Hubungi staff jika terjadi sengketa atau kesalahan claim.</p></article></div>`;break;
+ 
+case'claims':body=`
+<div class="notice">
+  <strong>🛡️ EVERGLOW CLAIM LANDS</strong><br>
+  Lindungi bangunan, harta benda, dan wilayahmu menggunakan GriefPrevention. Buat perlindungan dengan Golden Shovel dari pojok ke pojok!
+</div>
+
+<div class="content-grid" style="margin-top:18px">
+
+  <article class="card">
+    <h3>🪏 1. Membuat Claim</h3>
+    <p>Siapkan Golden Shovel. Klik kanan pada blok pojok pertama, kemudian klik kanan pada blok pojok kedua secara diagonal. Area di antara kedua titik akan menjadi wilayah perlindunganmu.</p>
+  </article>
+
+  <article class="card">
+    <h3>📐 2. Mengatur Ukuran Claim</h3>
+    <p>Gunakan Golden Shovel untuk memilih salah satu sudut claim yang sudah ada. Klik kanan pada lokasi baru untuk memperluas atau mengubah batas wilayah claim.</p>
+  </article>
+
+  <article class="card">
+    <h3>📋 3. Melihat Daftar Claim</h3>
+    <p>Gunakan <code>/claimlist</code> untuk melihat daftar wilayah yang kamu miliki dan informasi Claim Blocks.</p>
+  </article>
+
+  <article class="card">
+    <h3>🤝 4. Memberikan Akses Teman</h3>
+    <p><code>/trust &lt;player&gt;</code> memberikan akses pembangunan. Gunakan <code>/containertrust</code> untuk peti, <code>/accesstrust</code> untuk pintu dan tombol, serta <code>/permissiontrust</code> untuk mengatur izin pemain lain.</p>
+  </article>
+
+  <article class="card">
+    <h3>🚫 5. Menghapus Akses</h3>
+    <p>Gunakan <code>/untrust &lt;player&gt;</code> untuk mencabut akses pemain. Gunakan <code>/untrust all</code> untuk mencabut seluruh akses yang diberikan.</p>
+  </article>
+
+  <article class="card">
+    <h3>🗑️ 6. Menghapus Claim</h3>
+    <p><code>/abandonclaim</code> menghapus claim yang sedang kamu tempati. <code>/abandonallclaims</code> menghapus seluruh claim milikmu.</p>
+  </article>
+
+  <article class="card">
+    <h3>💰 7. Claim Blocks</h3>
+    <p>Claim Blocks menentukan luas wilayah yang dapat kamu lindungi. Gunakan <code>/buyclaimblocks</code> untuk membeli dan <code>/sellclaimblocks</code> untuk menjual Claim Blocks jika fitur ekonomi diaktifkan.</p>
+  </article>
+
+  <article class="card">
+    <h3>🏠 8. Subclaim</h3>
+    <p>Gunakan <code>/subdivideclaims</code> untuk membuat subclaim di dalam wilayah utama dan mengatur pembagian akses area.</p>
+  </article>
+
+  <article class="card">
+    <h3>🧭 9. Keluar dari Claim</h3>
+    <p>Jika terjebak di dalam wilayah claim yang tidak dapat kamu akses, gunakan <code>/trapped</code> untuk mencoba keluar.</p>
+  </article>
+
+  <article class="card">
+    <h3>🔍 10. Memeriksa Wilayah</h3>
+    <p>Gunakan Stick untuk memeriksa informasi claim dan mengetahui pemilik wilayah yang sedang kamu periksa.</p>
+  </article>
+
+  <article class="card">
+    <h3>⚙️ 11. Fitur Tambahan</h3>
+    <p><code>/basicclaims</code> untuk mode claim biasa. <code>/claimexplosions</code> untuk mengatur ledakan dalam wilayah claim.</p>
+  </article>
+
+  <article class="card">
+    <h3>🎁 12. Pengaturan Drop</h3>
+    <p><code>/unlockdrops</code> digunakan untuk mengatur akses terhadap item drop milik pemain yang telah meninggal.</p>
+  </article>
+
+</div>
+
+<div class="card" style="margin-top:18px">
+  <h3>📜 DAFTAR COMMAND CLAIM</h3>
+  <p><code>/claim</code> · <code>/claimlist</code> · <code>/abandonclaim</code> · <code>/abandonallclaims</code> · <code>/trapped</code> · <code>/trust</code> · <code>/untrust</code> · <code>/trustlist</code> · <code>/containertrust</code> · <code>/accesstrust</code> · <code>/permissiontrust</code> · <code>/buyclaimblocks</code> · <code>/sellclaimblocks</code> · <code>/subdivideclaims</code> · <code>/basicclaims</code> · <code>/claimexplosions</code> · <code>/unlockdrops</code></p>
+</div>
+
+<div class="notice" style="margin-top:18px">
+  <strong>⚠️ EVERGLOW COMMUNITY RULES</strong><br>
+  • Jangan mengambil wilayah pemain lain.<br>
+  • Jangan menyalahgunakan izin trust.<br>
+  • Jangan memberikan akses kepada pemain yang tidak dipercaya.<br>
+  • Sengketa wilayah dapat dilaporkan kepada Staff EverGlow.
+</div>
+
+<div class="card" style="margin-top:20px">
+  <h3>🎬 HOW TO CLAIM YOUR LAND</h3>
+  <p>
+    Pelajari cara melindungi wilayahmu menggunakan
+    Golden Shovel di EverGlow SMP.
+  </p>
+
+  <div style="
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:14px;
+    background:#111;
+    margin-top:14px;
+  ">
+    <iframe
+      src="https://www.youtube.com/embed/VDsjXB-BaE0"
+      title="GriefPrevention Land Claim Tutorial"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      style="
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        border:0;
+      ">
+    </iframe>
+  </div>
+
+  <p style="font-size:12px;opacity:.7;margin-top:12px">
+    Tutorial: GriefPrevention Golden Shovel System
+  </p>
+</div>
+
+`;break;
+
  case'economy':body=cards([['▣','Auction House','/ah — marketplace antar pemain.'],['🛒','Shop','/shop — akses toko server.'],['⇧','Sell GUI','/sellgui — jual item melalui GUI.'],['▦','QuickShop','Sistem toko pemain menggunakan QuickShop.']]);break;
  case'warps':body=cards([['⌖','Lobby','/rtp hanya digunakan di Lobby untuk membuka GUI pemilihan dunia.'],['✦','Random teleport','/egrtp melakukan random teleport langsung di world, world_nether, dan world_the_end.'],['⇢','Warp menu','/warps membuka GUI navigasi warp.']]);break;
  case'gacha':body=`<div class="content-grid">${[['Common','#65d67a'],['Rare','#477dd7'],['Epic','#bd91ed'],['Mythic','#111820']].map(x=>`<article class="card"><span class="tag" style="color:${x[1]};border-color:${x[1]}">${x[0]}</span><h3 style="margin-top:14px">${x[0]} Rarity</h3><p>Hadiah dan peluang mengikuti konfigurasi gacha server terbaru.</p></article>`).join('')}</div>`;break;
