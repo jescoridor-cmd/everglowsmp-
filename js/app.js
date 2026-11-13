@@ -82,9 +82,7 @@ case'claims':body=`
     <p><code>/unlockdrops</code> digunakan untuk mengatur akses terhadap item drop milik pemain yang telah meninggal.</p>
   </article>
 
-</div>
-
-<div class="card" style="margin-top:18px">
+</div><div class="card" style="margin-top:18px">
   <h3>📜 DAFTAR COMMAND CLAIM</h3>
   <p><code>/claim</code> · <code>/claimlist</code> · <code>/abandonclaim</code> · <code>/abandonallclaims</code> · <code>/trapped</code> · <code>/trust</code> · <code>/untrust</code> · <code>/trustlist</code> · <code>/containertrust</code> · <code>/accesstrust</code> · <code>/permissiontrust</code> · <code>/buyclaimblocks</code> · <code>/sellclaimblocks</code> · <code>/subdivideclaims</code> · <code>/basicclaims</code> · <code>/claimexplosions</code> · <code>/unlockdrops</code></p>
 </div>
@@ -95,44 +93,6 @@ case'claims':body=`
   • Jangan menyalahgunakan izin trust.<br>
   • Jangan memberikan akses kepada pemain yang tidak dipercaya.<br>
   • Sengketa wilayah dapat dilaporkan kepada Staff EverGlow.
-</div>
-
-<div class="card" style="margin-top:20px">
-  <h3>🎬 HOW TO CLAIM YOUR LAND</h3>
-  <p>
-    Pelajari cara melindungi wilayahmu menggunakan
-    Golden Shovel di EverGlow SMP.
-  </p>
-
-  <div style="
-    position:relative;
-    width:100%;
-    aspect-ratio:16/9;
-    overflow:hidden;
-    border-radius:14px;
-    background:#111;
-    margin-top:14px;
-  ">
-    <iframe
-      src="https://www.youtube.com/embed/VDsjXB-BaE0"
-      title="GriefPrevention Land Claim Tutorial"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      style="
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        border:0;
-      ">
-    </iframe>
-  </div>
-
-  <p style="font-size:12px;opacity:.7;margin-top:12px">
-    Tutorial: GriefPrevention Golden Shovel System
-  </p>
 </div>
 
 `;break;
