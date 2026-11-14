@@ -449,7 +449,7 @@ case'status':body=`
 
     <a
       class="btn primary"
-      href="https://rise.mcindo.my.id/"
+      href="https://everglow.minecraftindonesia.my.id/"
       target="_blank"
       rel="noopener"
       style="display:inline-flex;justify-content:center"
