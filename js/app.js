@@ -1,6 +1,4 @@
 (() => {
- 
-(() => {
  const API_BASE = 'https://everglow.freesrv.com/api';
 
  async function api(endpoint) {
