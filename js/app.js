@@ -405,8 +405,9 @@ features:['/nick','/invsee','Kit Eternal']
  case'leaderboard':body=`<div class="content-grid"><article class="card"><h3>Top Balance</h3><div id="lb-balance" class="loading">Menunggu API aktif</div></article><article class="card"><h3>Top Playtime</h3><div id="lb-playtime" class="loading">Menunggu API aktif</div></article><article class="card"><h3>Top Mining</h3><div id="lb-mining" class="loading">Menunggu API aktif</div></article></div>`;break;
  case'players':body=`<div class="card"><form id="playerSearch"><label for="playerQuery">Username atau UUID</label><div class="ip-row"><input id="playerQuery" required placeholder="Masukkan username / UUID" style="flex:1;min-width:0;background:none;border:0;color:white;outline:0"><button class="btn primary small">Cari</button></div></form><div id="playerResult" class="empty">Masukkan identitas pemain untuk mencari profil.</div></div>`;break;
  
+
 case'status':body=`
-<div class="card reveal" style="text-align:center;padding:35px 20px">
+<div class="card reveal" style="text-align:center;padding:40px 20px">
 
   <div class="iconbox" style="margin:0 auto 20px">
     ☀
@@ -419,11 +420,12 @@ case'status':body=`
   </h2>
 
   <p class="muted" style="margin-bottom:25px">
-    Periksa status koneksi server, jumlah pemain online,
-    dan informasi server EverGlow SMP secara langsung.
+    Pantau status server EverGlow SMP,
+    jumlah pemain online, dan informasi koneksi
+    secara langsung.
   </p>
 
-  <div class="tag" style="margin-bottom:22px">
+  <div class="tag" style="margin-bottom:25px">
     JAVA + BEDROCK CROSSPLAY
   </div>
 
@@ -440,7 +442,7 @@ case'status':body=`
   </div>
 
   <p class="muted" style="font-size:12px;margin-top:20px">
-    Status Dashboard · rise.mcindo.my.id
+    Server Monitoring · EverGlow SMP
   </p>
 
 </div>
