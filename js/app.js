@@ -1,7 +1,7 @@
 (() => {
  
 (() => {
- const API_BASE = 'https://everglow.freesrv.com/api';
+ const API_BASE= 'https://everglow.freesrv.com/api';
 
  async function api(endpoint) {
    const response = await fetch(`${API_BASE}${endpoint}`);
