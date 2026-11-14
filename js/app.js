@@ -9,7 +9,25 @@
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x)); }
  const featureCards=[['⚔','Survival SMP','Bangun, jelajah, dan berkembang bersama komunitas.'],['⛏','Area Mining','Temukan area mining untuk mengumpulkan resource.'],['✧','Gacha & Exclusive Rewards','Sistem gacha dengan rarity dan hadiah eksklusif.'],['♛','Rank & Progression','Tujuh tier rank untuk perjalanan pemain.'],['☾','AFK Zone','Area khusus AFK sesuai aturan server.'],['⚡','PvP Arena','Uji kemampuan bertarung di arena PvP.'],['⇄','Java & Bedrock','Crossplay untuk pemain Java dan Bedrock.']];
  function cards(items){return `<div class="grid">${items.map(x=>`<article class="card reveal"><div class="iconbox">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p></article>`).join('')}</div>`}
- function home(){return `<main><section class="shell hero"><div class="reveal"><div class="eyebrow">ONE WORLD · ONE COMMUNITY</div><h1>Welcome to <span>EverGlow</span> SMP.</h1><p class="lead">Satu dunia, satu komunitas, dan petualangan tanpa batas. Bergabunglah dalam survival lintas platform Java & Bedrock.</p><div class="hero-actions"><a class="btn primary" href="${C.discord}" target="_blank" rel="noopener">Join Discord ↗</a><a class="btn" href="pages/guide.html">Player Guide</a><a class="btn" href="${C.saweria}" target="_blank" rel="noopener">✦ Saweria</a></div><div class="tag">JAVA + BEDROCK CROSSPLAY</div></div><aside class="server-card reveal"><div class="castle">♜</div><h3>Join the world</h3><p class="muted">Java Edition</p><div class="ip-row"><code>${C.javaIp}</code><button class="btn small" data-copy="${C.javaIp}">Copy</button></div><p class="muted" style="margin-top:14px">Bedrock Edition · Port ${C.bedrockPort}</p><div class="ip-row"><code>${C.bedrockIp}</code><button class="btn small" data-copy="${C.bedrockIp}">Copy</button></div></aside></section><section class="section shell"><div class="section-head"><div><div class="eyebrow">DISCOVER EVERGLOW</div><h2>Built for your adventure</h2></div><a class="btn small" href="pages/features.html">All features →</a></div>${cards(featureCards.slice(0,6))}</section><section class="section shell"><div class="section-head"><div><div class="eyebrow">LIVE CONNECTION</div><h2>Server status</h2></div><a class="btn small" href="pages/status.html">View details →</a></div><div class="card" id="homeStatus"><div class="loading">Menunggu API aktif</div></div></section></main>`}
+ function home(){return `<main><section class="shell hero"><div class="reveal"><div class="eyebrow">ONE WORLD · ONE COMMUNITY</div><h1>Welcome to <span>EverGlow</span> SMP.</h1><p class="lead">Satu dunia, satu komunitas, dan petualangan tanpa batas. Bergabunglah dalam survival lintas platform Java & Bedrock.</p>
+<div class="hero-actions">
+  <a class="btn primary" href="${C.discord}" target="_blank" rel="noopener">
+    Join Discord ↗
+  </a>
+
+  <a class="btn" href="pages/guide.html">
+    Player Guide
+  </a>
+
+  <a class="btn" href="pages/status.html">
+    ☀ Cek Status Server
+  </a>
+
+  <a class="btn" href="${C.saweria}" target="_blank" rel="noopener">
+    ✦ Saweria
+  </a>
+</div>
+<div class="tag">JAVA + BEDROCK CROSSPLAY</div></div><aside class="server-card reveal"><div class="castle">♜</div><h3>Join the world</h3><p class="muted">Java Edition</p><div class="ip-row"><code>${C.javaIp}</code><button class="btn small" data-copy="${C.javaIp}">Copy</button></div><p class="muted" style="margin-top:14px">Bedrock Edition · Port ${C.bedrockPort}</p><div class="ip-row"><code>${C.bedrockIp}</code><button class="btn small" data-copy="${C.bedrockIp}">Copy</button></div></aside></section><section class="section shell"><div class="section-head"><div><div class="eyebrow">DISCOVER EVERGLOW</div><h2>Built for your adventure</h2></div><a class="btn small" href="pages/features.html">All features →</a></div>${cards(featureCards.slice(0,6))}</section><section class="section shell"><div class="section-head"><div><div class="eyebrow">LIVE CONNECTION</div><h2>Server status</h2></div><a class="btn small" href="pages/status.html">View details →</a></div><div class="card" id="homeStatus"><div class="loading">Menunggu API aktif</div></div></section></main>`}
  function pageContent(){if(page==='home')return home();let [title,desc]=titles[page]||['EverGlow SMP',''];let body='';
  switch(page){case'features':body=cards(featureCards);break;
  case'guide':body=`<div class="content-grid"><article class="card"><h3>1. Join server</h3><p>Java: <b>evglow.my.id</b>. Bedrock: <b>eglow.mcindo.my.id:23379</b>, port <b>23379</b>.</p></article><article class="card"><h3>2. Teleport</h3><p><code>/rtp</code> hanya di Lobby untuk membuka GUI pemilihan dunia. <code>/egrtp</code> random teleport langsung di world, world_nether, dan world_the_end.</p></article><article class="card"><h3>3. Warp</h3><p><code>/warps</code> membuka GUI navigasi warp.</p></article><article class="card"><h3>4. Rewards</h3><p><code>/pta</code>, <code>/dailyreward</code>, dan <code>/votereward</code> sesuai ketentuan server.</p></article></div>`;break;
