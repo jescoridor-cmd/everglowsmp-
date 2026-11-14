@@ -1,4 +1,18 @@
 (() => {
+ 
+(() => {
+ const API_BASE = 'https://everglow.freesrv.com/api';
+
+ async function api(endpoint) {
+   const response = await fetch(`${API_BASE}${endpoint}`);
+   if (!response.ok) {
+     throw new Error(`API Error: ${response.status}`);
+   }
+   return response.json();
+ }
+
+ const C=window.EVERGLOW_CONFIG, page=document.body.dataset.page||'home', root=document.getElementById('app');
+ 
  const C=window.EVERGLOW_CONFIG, page=document.body.dataset.page||'home', root=document.getElementById('app');
  const titles={features:['Server Features','Fitur yang membangun pengalaman survival EverGlow.'],guide:['Player Guide','Panduan dasar untuk memulai petualanganmu.'],claims:['Claim Lands','Lindungi area bangunan dan atur akses teman dengan aman.'],economy:['Economy & Market','Perdagangan pemain dan ekonomi komunitas.'],warps:['Warp & Teleport','Navigasi antar lokasi dan dunia.'],gacha:['Gacha & Rarity','Kenali tingkatan rarity hadiah.'],rewards:['Daily Rewards','Reward harian, playtime, dan vote.'],ranks:['Rank & Kits','Jelajahi sistem progression EverGlow.'],rules:['Server Rules','Bermain adil, aman, dan saling menghormati.'],leaderboard:['Leaderboard','Peringkat berdasarkan data server yang tersinkron.'],players:['Player Profiles','Cari profil pemain EverGlow berdasarkan username atau UUID.'],status:['Server Status','Pantau status koneksi dan kapasitas server.'],community:['Community','Terhubung dengan komunitas EverGlow.'],donation:['Support EverGlow','Dukungan komunitas membantu keberlangsungan server.']};
  const nav=[['Home','index.html','home'],['Features','pages/features.html','features'],['Guide','pages/guide.html','guide'],['Claim','pages/claims.html','claims'],['Economy','pages/economy.html','economy'],['Ranks','pages/ranks.html','ranks'],['Leaderboard','pages/leaderboard.html','leaderboard'],['Status','pages/status.html','status'],['Community','pages/community.html','community']];
