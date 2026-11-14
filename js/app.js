@@ -404,7 +404,48 @@ features:['/nick','/invsee','Kit Eternal']
  case'rules':body=cards([['🤝','Respect','Hormati semua pemain dan staff. Dilarang melakukan harassment atau diskriminasi.'],['⚖','Fair Play','Dilarang cheat, exploit, atau menyalahgunakan bug.'],['🏡','Claim Respect','Jangan grief, mencuri, atau mengganggu wilayah pemain lain.'],['💬','Community','Hindari spam, scam, dan promosi tanpa izin.'],['🛡','Staff Decision','Ikuti arahan staff dan gunakan kanal laporan jika ada masalah.'],['📜','Stay Updated','Peraturan dapat diperbarui; ikuti pengumuman resmi.']]);break;
  case'leaderboard':body=`<div class="content-grid"><article class="card"><h3>Top Balance</h3><div id="lb-balance" class="loading">Menunggu API aktif</div></article><article class="card"><h3>Top Playtime</h3><div id="lb-playtime" class="loading">Menunggu API aktif</div></article><article class="card"><h3>Top Mining</h3><div id="lb-mining" class="loading">Menunggu API aktif</div></article></div>`;break;
  case'players':body=`<div class="card"><form id="playerSearch"><label for="playerQuery">Username atau UUID</label><div class="ip-row"><input id="playerQuery" required placeholder="Masukkan username / UUID" style="flex:1;min-width:0;background:none;border:0;color:white;outline:0"><button class="btn primary small">Cari</button></div></form><div id="playerResult" class="empty">Masukkan identitas pemain untuk mencari profil.</div></div>`;break;
- case'status':body=`<div id="serverStatus" class="card"><div class="loading">Menunggu API aktif</div></div>`;break;
+ 
+case'status':body=`
+<div class="card reveal" style="text-align:center;padding:35px 20px">
+
+  <div class="iconbox" style="margin:0 auto 20px">
+    ☀
+  </div>
+
+  <div class="eyebrow">LIVE SERVER MONITORING</div>
+
+  <h2 style="margin:12px 0">
+    EverGlow Server Status
+  </h2>
+
+  <p class="muted" style="margin-bottom:25px">
+    Periksa status koneksi server, jumlah pemain online,
+    dan informasi server EverGlow SMP secara langsung.
+  </p>
+
+  <div class="tag" style="margin-bottom:22px">
+    JAVA + BEDROCK CROSSPLAY
+  </div>
+
+  <div>
+    <a
+      class="btn primary"
+      href="https://rise.mcindo.my.id/"
+      target="_blank"
+      rel="noopener"
+      style="display:inline-block;padding:15px 30px"
+    >
+      ☀ CEK STATUS SERVER ↗
+    </a>
+  </div>
+
+  <p class="muted" style="font-size:12px;margin-top:20px">
+    Status Dashboard · rise.mcindo.my.id
+  </p>
+
+</div>
+`;break;
+
  case'community':body=cards([['◉','Discord','Diskusi, pengumuman, dan bantuan komunitas.'],['☏','WhatsApp','Terhubung dengan grup komunitas EverGlow.'],['☆','Vote','Dukung server melalui vote resmi.']])+`<div class="hero-actions"><a class="btn primary" href="${C.discord}" target="_blank" rel="noopener">Discord ↗</a><a class="btn" href="${C.whatsapp}" target="_blank" rel="noopener">WhatsApp ↗</a><a class="btn" href="${C.vote}" target="_blank" rel="noopener">Vote ↗</a></div>`;break;
  case'donation':body=`<div class="card"><div class="eyebrow">SUPPORT THE COMMUNITY</div><h2>Keep EverGlow glowing.</h2><p class="muted">Dukungan bersifat sukarela. Pastikan membaca informasi dan ketentuan donasi resmi.</p><a class="btn primary" style="margin-top:15px" href="${C.saweria}" target="_blank" rel="noopener">✦ Donate via Saweria</a></div>`;break;
  }
