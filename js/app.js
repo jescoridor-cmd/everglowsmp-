@@ -472,7 +472,7 @@ case'status':body=`
  }
  shell(pageContent());
  // EverGlow FreeSRV API adapter. Supports apiBase with or without trailing /api.
- const API_BASE=(()=>{let b=String(C.apiBase||'https://everglow.freesrv.com/api').replace(/\/$/,'');return b.endsWith('/api')?b:`${b}/api`;})();
+ const API_BASE=(()=>{let b=String(C.apiBase||'https://everglow.minecraftindonesia.my.id/').replace(/\/$/,'');return b.endsWith('/api')?b:`${b}/api`;})();
  const api=async(path)=>{
    let endpoint=path;
    if(path==='/server/status') endpoint='/status';
