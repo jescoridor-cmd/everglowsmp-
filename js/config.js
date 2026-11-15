@@ -4,5 +4,5 @@ window.EVERGLOW_CONFIG = {
   discord: "https://discord.gg/GYNppTTPD",
   whatsapp: "https://chat.whatsapp.com/HsTvPXPogkFIDI6WPTqDEN?s=cl&p=a&iam=2",
   saweria: "https://saweria.co/SimbahMC",
-  vote: "vote: "https://minecraft-mp.com/server/366885/vote/","
+  vote: "https://minecraft-mp.com/server/366885/vote/",
 };
