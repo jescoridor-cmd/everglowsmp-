@@ -491,9 +491,50 @@ case'status':body=`
  };
  const fmt=n=>Number(n||0).toLocaleString('id-ID');
  function renderStatus(el,d){
-   if(!d||d.available===false||!d.updated_at){el.innerHTML='<div class=\"empty\">Data status belum tersedia.</div>';return;}
-   const platform=(name,s)=>`<div><div class=\"muted\">${name}</div><b><span class=\"status-dot ${s?.online?'online':''}\"></span>${s?.online?'ONLINE':'OFFLINE'}</b><p class=\"muted\">${fmt(s?.players?.online)} / ${fmt(s?.players?.max)} pemain</p></div>`;
-   el.innerHTML=`<div class=\"section-head\"><div><span class=\"status-dot ${d.online?'online':''}\"></span><b>${d.online?'ONLINE':'OFFLINE'}</b></div><span class=\"muted\">Update: ${new Date(d.updated_at).toLocaleString('id-ID')}</span></div><div class=\"grid\">${platform('Java Edition',d.java)}${platform('Bedrock Edition',d.bedrock)}<div><div class=\"muted\">Total Players</div><h2>${fmt(d.players_online)} / ${fmt(d.max_players)}</h2></div></div><div class=\"notice\" style=\"margin-top:16px\"><b>Server MOTD</b><p>${escapeHtml(d.motd||'—')}</p></div>`;
+  if(!d||d.available===false||!d.updated_at){
+    el.innerHTML='<div class="empty">Data status belum tersedia.</div>';
+    return;
+  }
+
+  el.innerHTML=`
+    <div class="section-head">
+      <div>
+        <span class="status-dot ${d.online?'online':''}"></span>
+        <b>${d.online?'ONLINE':'OFFLINE'}</b>
+      </div>
+      <span class="muted">
+        Update: ${new Date(d.updated_at).toLocaleString('id-ID')}
+      </span>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="muted">Java Edition</div>
+        <b>
+          <span class="status-dot ${d.java?.online?'online':''}"></span>
+          ${d.java?.online?'ONLINE':'OFFLINE'}
+        </b>
+        <p class="muted">
+          ${fmt(d.java?.players?.online)} / ${fmt(d.java?.players?.max)} pemain
+        </p>
+      </div>
+
+      <div>
+        <div class="muted">Total Players</div>
+        <h2>${fmt(d.players_online)} / ${fmt(d.max_players)}</h2>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:16px">
+      <h3>☀ Server Crossplay Java & Bedrock Mabar</h3>
+      <p>Java dan Bedrock bisa bermain bersama dalam satu dunia EverGlow SMP.</p>
+    </div>
+
+    <div class="notice" style="margin-top:16px">
+      <b>Server MOTD</b>
+      <p>${escapeHtml(d.motd||'—')}</p>
+    </div>
+  `;
  }
  function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
  if(page==='home'||page==='status'){let el=document.getElementById(page==='home'?'homeStatus':'serverStatus');api('/server/status').then(d=>renderStatus(el,d)).catch(err=>{console.error('[EverGlow API]',err);el.innerHTML='<div class="empty">Gagal mengambil status API. Periksa koneksi backend.</div>'})}
